@@ -107,7 +107,7 @@ button {
 }
 
 .brand-mark {
-  width: clamp(260px, 34vw, 630px);
+  width: clamp(320px, 34vw, 620px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,7 +117,7 @@ button {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 12px 20px rgba(255, 42, 42, 0.1));
+  filter: drop-shadow(0 12px 24px rgba(255, 42, 42, 0.12));
 }
 
 .hero {
