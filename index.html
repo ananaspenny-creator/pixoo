@@ -21,13 +21,13 @@
       <header class="topbar">
         <nav class="nav" aria-label="التنقل الرئيسي">
           <div class="nav-left">
-            <button class="nav-cta" data-i18n="navCreate">إنشاء حساب</button>
+            <button type="button" class="nav-cta" data-scroll-target="#account">إنشاء حساب</button>
           </div>
           <div class="nav-right">
             <div class="lang-switcher" aria-label="تبديل اللغة">
-              <button class="lang-btn active" data-lang="ar">العربية</button>
-              <button class="lang-btn" data-lang="en">English</button>
-              <button class="lang-btn" data-lang="fr">Français</button>
+              <button type="button" class="lang-btn active" data-lang="ar">العربية</button>
+              <button type="button" class="lang-btn" data-lang="en">English</button>
+              <button type="button" class="lang-btn" data-lang="fr">Français</button>
             </div>
             <div class="brand-mark" aria-label="Pixoo logo">
               <svg viewBox="0 0 700 500" role="img" aria-label="Pixoo logo">
@@ -40,42 +40,17 @@
                 </defs>
 
                 <path
-                  d="M 116 346
-                     C 195 338, 273 274, 329 196
-                     C 395 103, 503 62, 612 80
-                     C 640 85, 666 97, 683 117
-                     C 630 143, 595 187, 553 212
-                     C 500 242, 470 246, 430 232
-                     C 382 217, 324 183, 280 130
-                     C 236 78, 186 58, 131 93
-                     C 89 122, 71 163, 70 205
-                     C 69 249, 85 298, 116 346 Z"
+                  d="M 116 346 C 195 338, 273 274, 329 196 C 395 103, 503 62, 612 80 C 640 85, 666 97, 683 117 C 630 143, 595 187, 553 212 C 500 242, 470 246, 430 232 C 382 217, 324 183, 280 130 C 236 78, 186 58, 131 93 C 89 122, 71 163, 70 205 C 69 249, 85 298, 116 346 Z"
                   fill="url(#pixoo-red)"
                 />
 
                 <path
-                  d="M 212 394
-                     C 265 349, 304 286, 330 227
-                     C 354 170, 375 110, 406 82
-                     C 492 13, 618 39, 666 120
-                     C 632 133, 590 137, 548 149
-                     C 514 159, 479 176, 444 205
-                     C 408 233, 387 253, 345 302
-                     C 304 350, 270 392, 212 394 Z"
+                  d="M 212 394 C 265 349, 304 286, 330 227 C 354 170, 375 110, 406 82 C 492 13, 618 39, 666 120 C 632 133, 590 137, 548 149 C 514 159, 479 176, 444 205 C 408 233, 387 253, 345 302 C 304 350, 270 392, 212 394 Z"
                   fill="url(#pixoo-red)"
                 />
 
-                <path
-                  d="M 585 113
-                     A 64 64 0 1 1 585.1 113 Z"
-                  fill="#cf0d0d"
-                />
-
-                <path
-                  d="M 585 113
-                     A 42 42 0 1 1 584.9 113 Z"
-                  fill="#ff3a3a"
-                />
+                <path d="M 585 113 A 64 64 0 1 1 585.1 113 Z" fill="#cf0d0d" />
+                <path d="M 585 113 A 42 42 0 1 1 584.9 113 Z" fill="#ff3a3a" />
               </svg>
             </div>
           </div>
@@ -92,8 +67,8 @@
           </p>
 
           <div class="cta-row">
-            <button class="primary-btn" data-i18n="primaryBtn">ابدأ مجانًا</button>
-            <button class="secondary-btn" data-i18n="secondaryBtn">استكشف الأدوات</button>
+            <button type="button" class="primary-btn" data-scroll-target="#account" data-i18n="primaryBtn">ابدأ مجانًا</button>
+            <button type="button" class="secondary-btn" data-scroll-target="#tools" data-i18n="secondaryBtn">استكشف الأدوات</button>
           </div>
 
           <ul class="stats" aria-label="إحصاءات Pixoo">
@@ -168,7 +143,7 @@
           <p class="eyebrow" data-i18n="freeEyebrow">مجاني بالكامل</p>
           <h2 data-i18n="freeTitle">لا رسوم، لا اشتراكات، لا حواجز.</h2>
         </div>
-        <button class="primary-btn" data-i18n="freeButton">أنشئ حسابك الآن</button>
+        <button type="button" class="primary-btn" data-scroll-target="#account" data-i18n="freeButton">أنشئ حسابك الآن</button>
       </section>
 
       <section class="account" id="account">
@@ -176,9 +151,7 @@
           <div class="account-copy">
             <p class="eyebrow" data-i18n="accountEyebrow">إبدأ الآن</p>
             <h2 data-i18n="accountTitle">أنشئ حسابك في Pixoo</h2>
-            <p data-i18n="accountText">
-              ابدأ بتجربة أدواتك المفضلة، احفظ المشاريع، واستمتع بإمكانية الوصول المجاني.
-            </p>
+            <p data-i18n="accountText">ابدأ بتجربة أدواتك المفضلة، احفظ المشاريع، واستمتع بإمكانية الوصول المجاني.</p>
           </div>
 
           <form class="signup-form" id="signupForm" novalidate>
@@ -209,38 +182,6 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -33,7 +33,8 @@ const translations = {
     labelPassword: 'كلمة المرور',
     signupBtn: 'إنشاء الحساب',
     formNote: 'مجاني دائمًا — بدون اشتراك.',
-    signupSuccess: 'تم إنشاء حسابك بنجاح.'
+    signupSuccess: 'تم إنشاء حسابك بنجاح.',
+    requiredFields: 'يرجى ملء جميع الحقول أولاً.'
   },
   en: {
     navCreate: 'Create account',
@@ -69,7 +70,8 @@ const translations = {
     labelPassword: 'Password',
     signupBtn: 'Create account',
     formNote: 'Always free — no subscription needed.',
-    signupSuccess: 'Your account has been created successfully.'
+    signupSuccess: 'Your account has been created successfully.',
+    requiredFields: 'Please fill in all fields.'
   },
   fr: {
     navCreate: 'Créer un compte',
@@ -105,7 +107,8 @@ const translations = {
     labelPassword: 'Mot de passe',
     signupBtn: 'Créer le compte',
     formNote: 'Toujours gratuit — aucun abonnement requis.',
-    signupSuccess: 'Votre compte a été créé avec succès.'
+    signupSuccess: 'Votre compte a été créé avec succès.',
+    requiredFields: 'Veuillez remplir tous les champs.'
   }
 };
 
@@ -131,6 +134,19 @@ function localize(lang) {
   });
 }
 
+function scrollToSection(targetSelector) {
+  const target = document.querySelector(targetSelector);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+document.querySelectorAll('[data-scroll-target]').forEach((button) => {
+  button.addEventListener('click', () => {
+    scrollToSection(button.dataset.scrollTarget);
+  });
+});
+
 langButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const lang = button.dataset.lang;
@@ -148,7 +164,7 @@ signupForm.addEventListener('submit', (event) => {
   const password = document.getElementById('password').value.trim();
 
   if (!name || !email || !password) {
-    showToast('Please fill in all fields.');
+    showToast(translations[html.lang]?.requiredFields || translations.ar.requiredFields);
     return;
   }
 
