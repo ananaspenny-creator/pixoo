@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+    <style>
+      :root {
+        --bg: #060b14;
+        --panel: rgba(17, 23, 35, 0.9);
+        --panel-alt: rgba(12, 17, 28, 0.96);
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #edf4ff;
+        --muted: #9fb0c7;
+        --accent: #5eead4;
+        --accent-2: #60a5fa;
+        --shadow: rgba(30, 41, 59, 0.4);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top, rgba(96, 165, 250, 0.12), transparent 30%),
+                    linear-gradient(180deg, #020509 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      .clock-wrap {
+        width: min(1100px, 92vw);
+        padding: 32px 24px;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: rgba(7, 11, 18, 0.78);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(12px);
+      }
+
+      h1 {
+        margin: 0 0 20px;
+        text-align: center;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        letter-spacing: -0.04em;
+      }
+
+      .clock-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px;
+      }
+
+      .timezone-card {
+        background: linear-gradient(180deg, var(--panel) 0%, var(--panel-alt) 100%);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 22px 18px;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      }
+
+      .timezone-name {
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .time {
+        font-size: clamp(2rem, 3vw, 2.9rem);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+      }
+
+      .date {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 12px;
+        align-self: flex-start;
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+        background: rgba(94, 234, 212, 0.12);
+        color: var(--accent);
+        border: 1px solid rgba(94, 234, 212, 0.25);
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 480px) {
+        .clock-wrap {
+          padding: 22px 16px;
+        }
+
+        .timezone-card {
+          min-height: 160px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock-wrap">
+      <h1>World Clock</h1>
+      <div class="clock-grid" id="clockGrid"></div>
+    </div>
+
+    <script>
+      const timezones = [
+        { label: 'Local Time', value: Intl.DateTimeFormat().resolvedOptions().timeZone },
+        { label: 'UTC', value: 'UTC' },
+        { label: 'New York', value: 'America/New_York' },
+        { label: 'London', value: 'Europe/London' },
+        { label: 'Dubai', value: 'Asia/Dubai' },
+        { label: 'Tokyo', value: 'Asia/Tokyo' },
+        { label: 'Sydney', value: 'Australia/Sydney' },
+        { label: 'Paris', value: 'Europe/Paris' }
+      ];
+
+      const clockGrid = document.getElementById('clockGrid');
+
+      function formatTime(date, timeZone) {
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        }).format(date);
+      }
+
+      function formatDate(date, timeZone) {
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone,
+          weekday: 'short',
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric'
+        }).format(date);
+      }
+
+      function renderClock() {
+        const now = new Date();
+
+        clockGrid.innerHTML = timezones
+          .map(({ label, value }) => {
+            const formattedTime = formatTime(now, value === 'Local Time' ? undefined : value);
+            const formattedDate = formatDate(now, value === 'Local Time' ? undefined : value);
+            const badge = value === 'UTC' ? 'UTC' : label === 'Local Time' ? 'Local' : 'Zone';
+
+            return `
+              <div class="timezone-card">
+                <div class="timezone-name">${label}</div>
+                <div class="time">${formattedTime}</div>
+                <div class="date">${formattedDate}</div>
+                <span class="badge">${badge}</span>
+              </div>
+            `;
+          })
+          .join('');
+      }
+
+      renderClock();
+      setInterval(renderClock, 1000);
+    </script>
+  </body>
+</html>
