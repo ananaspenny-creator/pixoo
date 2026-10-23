@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixoo</title>
+    <meta
+      name="description"
+      content="Pixoo helps creators generate audio, images, and videos for free."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="التنقل الرئيسي">
+          <div class="nav-left">
+            <button class="nav-cta" data-i18n="navCreate">إنشاء حساب</button>
+          </div>
+          <div class="nav-right">
+            <div class="lang-switcher" aria-label="تبديل اللغة">
+              <button class="lang-btn active" data-lang="ar">العربية</button>
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="fr">Français</button>
+            </div>
+            <div class="brand-mark" aria-label="Pixoo logo">
+              <svg viewBox="0 0 700 500" role="img" aria-label="Pixoo logo">
+                <defs>
+                  <linearGradient id="pixoo-red" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ff2c2c"/>
+                    <stop offset="40%" stop-color="#d50000"/>
+                    <stop offset="100%" stop-color="#990000"/>
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M107 317 C220 370, 289 330, 345 260
+                     C390 205, 453 178, 561 194
+                     C528 268, 495 305, 441 339
+                     C390 370, 300 397, 233 373
+                     C178 352, 137 336, 107 317 Z"
+                  fill="url(#pixoo-red)"
+                />
+                <path
+                  d="M214 100 C335 196, 420 227, 542 259
+                     C427 311, 366 314, 288 284
+                     C222 258, 168 214, 214 100 Z"
+                  fill="url(#pixoo-red)"
+                />
+                <path
+                  d="M592 113 A68 68 0 1 1 591.5 113 Z"
+                  fill="#d90e0e"
+                />
+                <path
+                  d="M592 113 A48 48 0 1 1 591.7 113 Z"
+                  fill="#ff2d2d"
+                  opacity="0.9"
+                />
+              </svg>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">موارد مجانية للمبدعين</p>
+          <h1 data-i18n="title">صُنع محتواك بسهولة.<br />ابدأ الآن مع Pixoo</h1>
+          <p class="subtitle" data-i18n="subtitle">
+            مولّدات الصوت، الصور والفيديوهات مجانًا، مصممة لمساعدتك على إنتاج محتوى قوي
+            بسرعة وبدون تعقيد.
+          </p>
+
+          <div class="cta-row">
+            <button class="primary-btn" data-i18n="primaryBtn">ابدأ مجانًا</button>
+            <button class="secondary-btn" data-i18n="secondaryBtn">استكشف الأدوات</button>
+          </div>
+
+          <ul class="stats" aria-label="إحصاءات Pixoo">
+            <li>
+              <strong>3+</strong>
+              <span data-i18n="stat1">أنواع المحتوى</span>
+            </li>
+            <li>
+              <strong>100%</strong>
+              <span data-i18n="stat2">مجاني</span>
+            </li>
+            <li>
+              <strong>24/7</strong>
+              <span data-i18n="stat3">متاح</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="hero-visual" aria-label="عرض توضيحي">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="feature-card feature-card-top">
+            <span>🎵</span>
+            <strong data-i18n="cardAudio">توليد صوت</strong>
+          </div>
+          <div class="feature-card feature-card-mid">
+            <span>🖼️</span>
+            <strong data-i18n="cardImage">إنشاء صور</strong>
+          </div>
+          <div class="feature-card feature-card-bottom">
+            <span>🎬</span>
+            <strong data-i18n="cardVideo">إنتاج فيديو</strong>
+          </div>
+        </section>
+      </main>
+
+      <section class="tools" id="tools">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="toolsEyebrow">الأدوات</p>
+          <h2 data-i18n="toolsTitle">كل ما تحتاجه لتطوير محتواك</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card">
+            <div class="icon">🎙️</div>
+            <h3 data-i18n="toolAudioTitle">مولّد الصوت</h3>
+            <p data-i18n="toolAudioText">حوّل الفكرة إلى نص منطوق بجودة احترافية.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="icon">🖌️</div>
+            <h3 data-i18n="toolImageTitle">مولّد الصور</h3>
+            <p data-i18n="toolImageText">أنشئ مشاهد ورسومات مخصصة بسرعة وبأفكار جديدة.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="icon">🎞️</div>
+            <h3 data-i18n="toolVideoTitle">مولّد الفيديو</h3>
+            <p data-i18n="toolVideoText">قم بإنشاء عروض قصيرة ومقاطع جذابة من أفكارك.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="icon">🧠</div>
+            <h3 data-i18n="toolIdeasTitle">مساعد الفكر</h3>
+            <p data-i18n="toolIdeasText">اكتشف أفكارًا جديدة، سيناريوهات ومحتوى جاهز.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="free-banner">
+        <div>
+          <p class="eyebrow" data-i18n="freeEyebrow">مجاني بالكامل</p>
+          <h2 data-i18n="freeTitle">لا رسوم، لا اشتراكات، لا حواجز.</h2>
+        </div>
+        <button class="primary-btn" data-i18n="freeButton">أنشئ حسابك الآن</button>
+      </section>
+
+      <section class="account" id="account">
+        <div class="account-panel">
+          <div class="account-copy">
+            <p class="eyebrow" data-i18n="accountEyebrow">إبدأ الآن</p>
+            <h2 data-i18n="accountTitle">أنشئ حسابك في Pixoo</h2>
+            <p data-i18n="accountText">
+              ابدأ بتجربة أدواتك المفضلة، احفظ المشاريع، واستمتع بإمكانية الوصول المجاني.
+            </p>
+          </div>
+
+          <form class="signup-form" id="signupForm" novalidate>
+            <label>
+              <span data-i18n="labelName">الاسم الكامل</span>
+              <input type="text" id="fullName" name="fullName" placeholder="أحمد محمد" required />
+            </label>
+
+            <label>
+              <span data-i18n="labelEmail">البريد الإلكتروني</span>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              <span data-i18n="labelPassword">كلمة المرور</span>
+              <input type="password" id="password" name="password" placeholder="••••••••" required />
+            </label>
+
+            <button type="submit" class="primary-btn block" data-i18n="signupBtn">إنشاء الحساب</button>
+            <p class="form-note" data-i18n="formNote">مجاني دائمًا — بدون اشتراك.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
